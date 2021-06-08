@@ -154,7 +154,7 @@ class PesananActivity : AppCompatActivity() {
 
             if (itemRecommended != null) {
                 strMessage =
-                    "Hallo\nSaya memesan kemasan dengan spesifikasi berikut:\n\nJenis Pesanan ${itemRecommended.jenis} dengan Jumlah $jumlah dan Harga : Rp. ${totalHarga}\nContoh Gambar : ${itemRecommended.image}\nFile Template Desain Kemasan: linknya"
+                    "Hallo\nSaya memesan kemasan dengan spesifikasi berikut:\n\nJenis Pesanan ${itemRecommended.jenis} dengan Jumlah $jumlah dan Harga : Rp. ${totalHarga}\nContoh Gambar : ${itemRecommended.image}\nFile Template Desain Kemasan: https://www.figma.com/file/XXeIZ5KibShc3nTlXU13z0/Desain-Kemasan"
             }
 
 
@@ -163,7 +163,7 @@ class PesananActivity : AppCompatActivity() {
             if (installed) {
                 val intent = Intent(
                     Intent.ACTION_VIEW, Uri.parse(
-                        "https://api.whatsapp.com/send?phone=" + nomorHpRumahKemasan
+                        "https://api.whatsapp.com/send?phone=" + "+6285774342477"
                                 + "&text=" + strMessage
                     )
                 )

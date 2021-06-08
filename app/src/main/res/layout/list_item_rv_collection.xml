@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:fontFamily="@font/montserrat"
-            android:text="Jenis Kemasan :"
+            android:text="Jenis Produk        :"
             android:layout_marginTop="8dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/iv_collection"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat"
-            android:text="Jenis Produk     :"
+            android:text="Jenis Kemasan    :"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bahan                 :"
+            android:text="Bahan                   :"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/black"
@@ -58,7 +58,9 @@
 
         <TextView
             android:id="@+id/tv_nama"
-            android:layout_width="wrap_content"
+            android:maxLines="1"
+            android:layout_width="90dp"
+            android:ellipsize="end"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
             android:text="Nama"
@@ -70,7 +72,9 @@
 
         <TextView
             android:id="@+id/tv_bahan"
-            android:layout_width="wrap_content"
+            android:maxLines="1"
+            android:layout_width="90dp"
+            android:ellipsize="end"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Bahan"
@@ -81,10 +85,13 @@
 
         <TextView
             android:id="@+id/tv_deskripsi"
-            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Deskripsi"
+            android:maxLines="1"
+            android:layout_width="90dp"
+            android:ellipsize="end"
             android:fontFamily="@font/montserrat"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/tv_bahan"

@@ -99,13 +99,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
-        android:fontFamily="@font/light"
         android:text="Not have an acccount?"
         android:textColor="@color/black"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -113,7 +112,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
-        android:fontFamily="@font/light"
         android:text="@string/sign_up"
         android:textColor="@color/biru_tua"
         android:textSize="17sp"
@@ -139,7 +137,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login !"
+        android:text="Login!"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         android:textSize="48sp"

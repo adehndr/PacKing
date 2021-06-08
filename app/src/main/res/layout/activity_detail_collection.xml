@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="40dp"
-        android:text="Jenis Kemasan  :"
+        android:text="Jenis Produk      :"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/black"
         android:textStyle="normal"
@@ -35,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="24dp"
-        android:text="Jenis Produk      :"
+        android:text="Jenis Kemasan  :"
         android:textColor="@color/black"
         android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="24dp"
-        android:text="Harga                  :"
+        android:text="Harga                   :"
         android:fontFamily="@font/montserrat"
 
         android:textColor="@color/black"
@@ -85,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="40dp"
-        android:text="Kotak"
+        android:text="Donat"
         android:fontFamily="@font/montserrat"
 
         android:textColor="@color/black"
@@ -96,52 +97,58 @@
         android:id="@+id/tv_jenis_produk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
-        android:text="Donat"
         android:fontFamily="@font/montserrat"
+        android:text="Cup "
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/tv_jenis_kemasan"
         app:layout_constraintTop_toBottomOf="@+id/tv_jenis_kemasan" />
 
 
     <TextView
+        android:id="@+id/tv_bahan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
-        android:id="@+id/tv_bahan"
         android:text="Bahan"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/tv_jenis_produk"
         app:layout_constraintTop_toBottomOf="@+id/tv_jenis_produk" />
 
     <TextView
         android:id="@+id/tv_warna"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
 
         android:text="Biru"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/tv_bahan"
         app:layout_constraintTop_toBottomOf="@+id/tv_bahan" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Rp."
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/tv_warna"
+        app:layout_constraintTop_toBottomOf="@+id/tv_warna" />
 
     <TextView
         android:id="@+id/tv_harga"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat"
-
+        android:layout_marginStart="6dp"
         android:text="20000"
         android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/tv_warna" />
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toTopOf="@+id/textView31" />
 
     <Button
         android:id="@+id/btnorder"
