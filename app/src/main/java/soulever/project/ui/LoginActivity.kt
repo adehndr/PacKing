@@ -3,15 +3,21 @@ package soulever.project.ui
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doAfterTextChanged
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import soulever.project.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+    val TAG = "LoginActivity"
     private lateinit var loginActivityBinding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private var databaseReference: DatabaseReference? = null
@@ -27,20 +33,23 @@ class LoginActivity : AppCompatActivity() {
 
 
         val currentUser = auth.currentUser
-        if (currentUser != null) {
+/*        if (currentUser != null) {
             startActivity(Intent(this@LoginActivity, MainActivity::class.java))
             finish()
-        }
+        }*/
 
 
-        loginActivityBinding.Email.doAfterTextChanged {
+/*        loginActivityBinding.Email.doAfterTextChanged {
             val email = it.toString()
             RetrieveData(email, object : FireBaseCallback {
                 override fun onCallback(email: String, password: String) {
                     Login(email, password)
                 }
-
             })
+        }*/
+
+        loginActivityBinding.LoginButton.setOnClickListener {
+            loginUser()
         }
 
         loginActivityBinding.register.setOnClickListener {
@@ -49,6 +58,35 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        cekUser()
+    }
+    private fun cekUser()
+    {
+        val user = auth.currentUser
+        if (user != null)
+        {
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
+    }
+    private fun loginUser(){
+        var email = loginActivityBinding.Email.text.toString()
+        var password = loginActivityBinding.Password.text.toString()
+
+        if (email.isNotEmpty() && password.isNotEmpty())
+        {
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    auth.signInWithEmailAndPassword(email,password).await()
+                    cekUser()
+                }catch (e : Exception){
+                    e.message?.let { Log.d(TAG, it) }
+                }
+            }
+        }
+    }
     private fun Login(email: String, password: String) {
         loginActivityBinding.LoginButton.setOnClickListener {
             if (TextUtils.isEmpty(loginActivityBinding.Email.text.toString()) || !Patterns.EMAIL_ADDRESS.matcher(

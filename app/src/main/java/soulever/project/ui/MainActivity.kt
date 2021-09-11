@@ -182,7 +182,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
             loadingDialog?.startLoading()
 
             val rootObject = JSONObject()
-            rootObject.put("image_url", "https://amindfullmom.com/wp-content/uploads/2016/09/The-Best-Chicken-Soup.jpg")
+            rootObject.put("image_url", "https://storage.googleapis.com/packing-bucket/fototes.jpg")
             val urlApi = "https://us-central1-packing-314306.cloudfunctions.net/predict_pack"
             var responseObject = JSONObject()
             var arrayFood = ArrayList<String>()
@@ -237,7 +237,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope {
                         UploadImageHelper.transmitImageFile(
                             storage as Storage,
                             currentPhotoPath,
-                            "tesDump.jpg"
+                            "fototes.jpg"
                         )
                         val intent = Intent(this, RecommendedActivity::class.java)
                         intent.putExtra(RecommendedActivity.RECOMMENDED_ID, idRekomendasi)

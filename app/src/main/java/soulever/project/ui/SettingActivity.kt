@@ -29,6 +29,7 @@ class SettingActivity : AppCompatActivity(), SharedPreferences.OnSharedPreferenc
             .commit()
         val sharedPreference = PreferenceManager.getDefaultSharedPreferences(this)
         sharedPreference.registerOnSharedPreferenceChangeListener(this)
+
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {

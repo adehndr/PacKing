@@ -163,7 +163,7 @@ class PesananActivity : AppCompatActivity() {
             if (installed) {
                 val intent = Intent(
                     Intent.ACTION_VIEW, Uri.parse(
-                        "https://api.whatsapp.com/send?phone=" + "+6285774342477"
+                        "https://api.whatsapp.com/send?phone=" + nomorHpRumahKemasan
                                 + "&text=" + strMessage
                     )
                 )

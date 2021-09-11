@@ -25,7 +25,6 @@ class PreferencesFragment : PreferenceFragmentCompat(),
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
-
         }
         return super.onPreferenceTreeClick(preference)
     }
