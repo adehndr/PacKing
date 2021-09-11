@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "788583210732",
+    "project_id": "androidauth-f8922",
+    "storage_bucket": "androidauth-f8922.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788583210732:android:060d7346b77d07d2decfc9",
+        "android_client_info": {
+          "package_name": "com.example.conectfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788583210732-oq1b0eop10k8ttsj1j7pbte9luii7rj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOoE5psQ2wr-EyVwp11RkfOcSopUQDM0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788583210732-oq1b0eop10k8ttsj1j7pbte9luii7rj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788583210732:android:0ab8f7c6b252141adecfc9",
+        "android_client_info": {
+          "package_name": "soulever.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788583210732-oq1b0eop10k8ttsj1j7pbte9luii7rj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOoE5psQ2wr-EyVwp11RkfOcSopUQDM0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788583210732-oq1b0eop10k8ttsj1j7pbte9luii7rj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
