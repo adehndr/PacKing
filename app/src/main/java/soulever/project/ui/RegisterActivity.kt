@@ -10,9 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 import soulever.project.databinding.ActivityRegisterBinding
 import soulever.project.entity.User
 import soulever.project.entity.Users
+import java.lang.Exception
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var activityRegisterBinding: ActivityRegisterBinding
@@ -82,7 +90,24 @@ class RegisterActivity : AppCompatActivity() {
             return
         }
 
-        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val registeredUser = Users(username,email,password)
+                auth.createUserWithEmailAndPassword(email,password).await()
+                auth.signOut()
+                withContext(Dispatchers.Main){
+                    Toast.makeText(this@RegisterActivity,"Register Succesfull",Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@RegisterActivity,LoginActivity::class.java))
+                    }
+                }
+            catch (e : Exception)
+            {
+                e.message?.let { Log.d("RegisGagal", it) }
+            }
+
+        }
+
+/*        auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
             if (it.isSuccessful)
             {
                 val registeredUser = Users(username,email,password)
@@ -111,7 +136,7 @@ class RegisterActivity : AppCompatActivity() {
                 ).show()
 //                        updateUI(null)
             }
-        }
+        }*/
     }
 
     private fun register() {
